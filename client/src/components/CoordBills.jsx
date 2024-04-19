@@ -26,7 +26,7 @@ function CoordBills(){
   const [bills, setBills] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000')
+    axios.get('https://teambudgeter-bnls.vercel.app/')
       .then(res => {
         setBills(res.data);
       })
