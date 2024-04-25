@@ -42,7 +42,7 @@ function Chat({team}) {
   const [bills, setBills] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/')
+    axios.get('https://teambudgeter-2tdd.vercel.app/')
       .then(res => {
         const sortedData = res.data.sort((a, b) => 1);
         setBills(sortedData);

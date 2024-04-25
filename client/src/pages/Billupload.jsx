@@ -93,7 +93,7 @@ const updateproof = async (pid) => {
   const newProof = pid;
 
   try {
-    const response = await fetch(`http://localhost:5000/api/updatebill`, {
+    const response = await fetch(`https://teambudgeter-2tdd.vercel.app/api/updatebill`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
