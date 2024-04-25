@@ -9,7 +9,7 @@ import logo from "../assets/Logoblack.png";
 import pic2 from "../assets/backgroundlogin.png"
 import { Container } from '@chakra-ui/react';
 import Profilepic from '../assets/Profilepic.png';
-import { Button } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
 function Profile() {
   return (
     <div>
