@@ -9,7 +9,7 @@ function Pay() {
   const [bills, setBills] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/')
+    axios.get('https://teambudgeter-2tdd.vercel.app/')
       .then(res => {
         setBills(res.data);
       })

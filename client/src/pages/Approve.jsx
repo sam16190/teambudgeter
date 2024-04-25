@@ -14,7 +14,7 @@ function Approve() {
         setBills(res.data);
       })
   }, []);
-  console.log(bills);
+  // console.log(bills);
 
 
   return (

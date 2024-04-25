@@ -25,7 +25,7 @@ import { useNavigate } from 'react-router-dom';
 
 
   const fid = "https://res.cloudinary.com/dtpp08tmi/image/upload/v1681465983/" + pid + ".png";
-  console.log(fid);
+  // console.log(fid);
 
 
 
@@ -48,18 +48,28 @@ function CoordBillprop(props) {
 
 
 
-  console.log(pid)
+  // console.log(pid)
 async function updateStatustoPending(id){
-
-      const res = await axios({
-        method: 'put',
-        url: 'https://teambudgeter-2tdd.vercel.app/api/manager/approvebills/'+ id,
-        data: {
-            
-            newStatus: 'Pending'
-        }
-    });
+  try{
+    const res = await axios({
+      method: 'put',
+      url: 'https://teambudgeter-2tdd.vercel.app/api/manager/approvebills/'+ id,
+      data: {
+          
+          newStatus: 'Pending'
+      }
+  });
+  if (res.status === 200) {
+    // Bill updated successfully
+    console.log("Bill updated to Rejected");
+  } else {
+    console.error("Error updating bill status:", res.data);
+  }
+  }
       
+      catch(err){
+        console.log(err);
+      }
 }
 
 
@@ -68,15 +78,28 @@ async function updateStatustoPending(id){
 
 async function updateStatustoRejected(id){
   
+try{
+  const res = await axios({
+    method: 'put',
+    url: 'https://teambudgeter-2tdd.vercel.app/api/manager/approvebills/'+ id,
+    data: {
+        
+        newStatus: 'Rejected'
+    }
+    
 
-      const res = await axios({
-        method: 'put',
-        url: 'https://teambudgeter-2tdd.vercel.app/api/manager/approvebills/'+ id,
-        data: {
-            
-            newStatus: 'Rejected'
-        }
-    });
+});
+if (res.status === 200) {
+  // Bill updated successfully
+  console.log("Bill updated to Rejected");
+} else {
+  console.error("Error updating bill status:", res.data);
+}
+}
+catch(err){
+  console.log(err);
+}
+      
       
 }
 
@@ -113,6 +136,12 @@ async function updateStatustoPaid(id){
             newStatus: 'Paid'
         }
     });
+    if (res.status === 200) {
+      // Bill updated successfully
+      console.log("Bill updated to Rejected");
+    } else {
+      console.error("Error updating bill status:", res.data);
+    }
       
 }
 

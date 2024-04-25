@@ -49,7 +49,7 @@ function Chat({team}) {
         // setBills(res.data);
       })
   }, []);
-  console.log(bills);
+  // console.log(bills);
 
 
 
