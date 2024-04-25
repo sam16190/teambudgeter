@@ -53,7 +53,7 @@ async function updateStatustoPending(id){
 
       const res = await axios({
         method: 'put',
-        url: 'https://teambudgeter-bnls.vercel.app/api/manager/approvebills/'+ id,
+        url: 'http://localhost:5000/api/manager/approvebills/'+ id,
         data: {
             
             newStatus: 'Pending'
@@ -71,7 +71,7 @@ async function updateStatustoRejected(id){
 
       const res = await axios({
         method: 'put',
-        url: 'https://teambudgeter-bnls.vercel.app/api/manager/approvebills/'+ id,
+        url: 'http://localhost:5000/api/manager/approvebills/'+ id,
         data: {
             
             newStatus: 'Rejected'
@@ -91,7 +91,7 @@ const handleRefresh = () => {
 async function updateDate(id,p2){
   const res = await axios({
     method: 'patch',
-    url: 'https://teambudgeter-bnls.vercel.app/api/manager/approvebills/'+ id,
+    url: 'http://localhost:5000/api/manager/approvebills/'+ id,
     data: {
       newDate:p2
     }
@@ -107,7 +107,7 @@ async function updateDate(id,p2){
 async function updateStatustoPaid(id){
       const res = await axios({
         method: 'put',
-        url: 'https://teambudgeter-bnls.vercel.app/api/manager/paybills/'+ id,
+        url: 'http://localhost:5000/api/manager/paybills/'+ id,
         data: {
             
             newStatus: 'Paid'
