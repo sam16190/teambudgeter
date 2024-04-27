@@ -46,7 +46,9 @@ function CoordBillprop(props) {
 
 
 
-
+    const handleRefresh = () => {
+      window.location.reload();
+    };
 
   // console.log(pid)
 async function updateStatustoPending(id){
@@ -62,6 +64,7 @@ async function updateStatustoPending(id){
   if (res.status === 200) {
     // Bill updated successfully
     console.log("Bill updated to Rejected");
+    handleRefresh();
   } else {
     console.error("Error updating bill status:", res.data);
   }
@@ -89,9 +92,11 @@ try{
     
 
 });
+
 if (res.status === 200) {
   // Bill updated successfully
   console.log("Bill updated to Rejected");
+  handleRefresh();
 } else {
   console.error("Error updating bill status:", res.data);
 }
@@ -108,9 +113,7 @@ catch(err){
 const myRef = useRef(null);
 
 
-const handleRefresh = () => {
-  window.location.reload();
-};
+
 async function updateDate(id,p2){
   const res = await axios({
     method: 'patch',
@@ -139,6 +142,7 @@ async function updateStatustoPaid(id){
     if (res.status === 200) {
       // Bill updated successfully
       console.log("Bill updated to Rejected");
+      handleRefresh();
     } else {
       console.error("Error updating bill status:", res.data);
     }
@@ -206,7 +210,7 @@ const customStyle={
                
               <Button colorScheme='blue'  mr={3} onClick={()=>{
                   updateStatustoPending(props.id); 
-                  handleRefresh();
+                  //handleRefresh();
                   updateDate(props.id,document.getElementById("date").value);
                   }}>
                   Approve
@@ -214,7 +218,8 @@ const customStyle={
                 
                 <Button colorScheme='blue'  mr={3}    onClick={()=>{
                   updateStatustoRejected(props.id); 
-                  handleRefresh();
+                  //handleRefresh();
+                  
                   }} >
                   Reject
                 </Button>
@@ -280,7 +285,7 @@ const customStyle={
             <ModalFooter>
               <Button colorScheme='blue' mr={3} onClick={()=>{
                 updateStatustoPaid(props.id);
-                handleRefresh();
+                //handleRefresh();
               }}>
                 Done
               </Button>
