@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Box,Button, background } from "@chakra-ui/react";
 import pic2 from "../assets/backgroundhome.png";
 import "../homepage.css";
-import { fontWeight } from "@mui/system";
+// import { fontWeight } from "@mui/system";
 function Homepage(){
 
 
